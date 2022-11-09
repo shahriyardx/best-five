@@ -22,52 +22,101 @@
 
     <main>
       <section>
-        <div class="players">
-          <div class="players__player">
-            <img src="./assets/images/players/messi.webp" alt="" />
+        <div class="players-wrapper">
+          <div class="players">
+            <div class="players__player">
+              <img src="./assets/images/players/messi.webp" alt="" />
 
-            <div class="players__player-info">
-              <h1>Leo Messi</h1>
+              <div class="players__player-info">
+                <h1>Leo Messi</h1>
 
-              <p>
-                <span>36 Goals</span>
-                <span>·</span>
-                <span>120 Assist</span>
-              </p>
+                <p>
+                  <span>36 Goals</span>
+                  <span>·</span>
+                  <span>120 Assist</span>
+                </p>
 
-              <button>Select Player</button>
+                <button>Select Player</button>
+              </div>
+            </div>
+
+            <div class="players__player">
+              <img src="./assets/images/players/messi.webp" alt="" />
+
+              <div class="players__player-info">
+                <h1>Leo Messi</h1>
+
+                <p>
+                  <span>36 Goals</span>
+                  <span>·</span>
+                  <span>120 Assist</span>
+                </p>
+
+                <button>Select Player</button>
+              </div>
+            </div>
+
+            <div class="players__player">
+              <img src="./assets/images/players/messi.webp" alt="" />
+
+              <div class="players__player-info">
+                <h1>Leo Messi</h1>
+
+                <p>
+                  <span>36 Goals</span>
+                  <span>·</span>
+                  <span>120 Assist</span>
+                </p>
+
+                <button>Select Player</button>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="players__player">
-            <img src="./assets/images/players/messi.webp" alt="" />
+        <div class="sidebar">
+          <div class="cards-wrapper">
+            <div class="card selected">
+              <h2>Selected - <span class="selected_count">5</span></h2>
 
-            <div class="players__player-info">
-              <h1>Leo Messi</h1>
-
-              <p>
-                <span>36 Goals</span>
-                <span>·</span>
-                <span>120 Assist</span>
-              </p>
-
-              <button>Select Player</button>
+              <ol>
+                <li>Leonel Messi</li>
+                <li>Neymar</li>
+                <li>Neymar</li>
+                <li>Neymar</li>
+              </ol>
             </div>
-          </div>
 
-          <div class="players__player">
-            <img src="./assets/images/players/messi.webp" alt="" />
+            <div class="card budget">
+              <h2>Budget</h2>
 
-            <div class="players__player-info">
-              <h1>Leo Messi</h1>
+              <div class="two-col">
+                <p>Per Player</p>
+                <input type="number" />
+              </div>
 
-              <p>
-                <span>36 Goals</span>
-                <span>·</span>
-                <span>120 Assist</span>
-              </p>
+              <button class="calculate-button">Calculate</button>
 
-              <button>Select Player</button>
+              <div class="expanse-fields">
+                <div class="expanse">
+                  <p>Player Expanses <span>$5000</span></p>
+                </div>
+                <div class="two-col">
+                  <p>Manager</p>
+                  <input type="number" />
+                </div>
+
+                <div class="two-col">
+                  <p>Coach</p>
+                  <input type="number" />
+                </div>
+              </div>
+
+              <button class="calculate-button">Calculate Total</button>
+
+              <div class="total">
+                <p>Total <span class="total_number">$11000</span></p>
+              </div>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ header {
   @include sm {
     height: 500px;
     padding-block: 0;
-    padding-inline: 30px;
+    // padding-inline: 30px;
     background-position: top right;
   }
 
@@ -38,8 +38,6 @@ header {
     text-align: center;
 
     .info {
-      padding-inline: 20px;
-
       h1 {
         font-size: 40px;
         margin-bottom: 10px;
@@ -75,23 +73,30 @@ header {
 */
 
 main section {
-  max-width: 1600px;
-  margin-inline: auto;
-  padding-inline: 20px;
-  padding-block: 100px;
-
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 30px;
 
-  @include md {
-    grid-template-columns: 60% 40%;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding: 20px;
+  padding-block: 100px;
+
+  @include lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .players-wrapper {
+    @include lg {
+      grid-column: span 3;
+    }
   }
 
   .players {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
 
     @include sm {
       grid-template-columns: repeat(2, 1fr);
@@ -102,6 +107,7 @@ main section {
     }
 
     &__player {
+      border: 2px solid rgb(52, 52, 52);
       img {
         width: 100%;
         aspect-ratio: 3/2;
@@ -129,6 +135,101 @@ main section {
       }
       background: black;
       color: white;
+    }
+  }
+
+  .sidebar {
+    width: 100%;
+    color: rgb(228, 228, 228);
+
+    .cards-wrapper {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+
+      @include md {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include lg {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background-color: black;
+      padding: 30px;
+
+      @include md {
+        padding: 40px;
+      }
+    }
+
+    .card {
+      font-size: 20px;
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+      }
+    }
+
+    .selected {
+      ol {
+        padding-left: 20px;
+
+        li {
+          font-size: 20px;
+          line-height: 40px;
+        }
+      }
+    }
+
+    .budget {
+      color: rgb(194, 194, 194);
+
+      button {
+        padding: 20px 10px;
+        display: block;
+        width: 100%;
+        margin-block: 20px;
+        font-size: 20px;
+        background-color: rgb(0, 72, 207);
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        align-items: center;
+
+        input {
+          padding: 15px 20px;
+          appearance: none;
+        }
+      }
+
+      .expanse-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .expanse p,
+      .total p {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          color: white;
+        }
+      }
+
+      .total p span {
+        color: rgb(255, 81, 110);
+      }
     }
   }
 }

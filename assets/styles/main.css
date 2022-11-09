@@ -40,7 +40,6 @@ header {
   header {
     height: 500px;
     padding-block: 0;
-    padding-inline: 30px;
     background-position: top right;
   }
 }
@@ -54,9 +53,6 @@ header .content {
   max-width: 1800px;
   margin-inline: auto;
   text-align: center;
-}
-header .content .info {
-  padding-inline: 20px;
 }
 header .content .info h1 {
   font-size: 40px;
@@ -91,23 +87,29 @@ header .content .info p {
 * Player cards
 */
 main section {
-  max-width: 1600px;
-  margin-inline: auto;
-  padding-inline: 20px;
-  padding-block: 100px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding: 20px;
+  padding-block: 100px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   main section {
-    grid-template-columns: 60% 40%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  main section .players-wrapper {
+    grid-column: span 3;
   }
 }
 main section .players {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 20px;
 }
 @media (min-width: 576px) {
   main section .players {
@@ -120,6 +122,7 @@ main section .players {
   }
 }
 main section .players__player {
+  border: 2px solid rgb(52, 52, 52);
   background: black;
   color: white;
 }
@@ -144,4 +147,90 @@ main section .players__player-info button {
   background: #1b8cfd;
   color: white;
   cursor: pointer;
+}
+main section .sidebar {
+  width: 100%;
+  color: rgb(228, 228, 228);
+}
+main section .sidebar .cards-wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  main section .sidebar .cards-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  main section .sidebar .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+main section .sidebar .card {
+  background-color: black;
+  padding: 30px;
+}
+@media (min-width: 768px) {
+  main section .sidebar .card {
+    padding: 40px;
+  }
+}
+main section .sidebar .card {
+  font-size: 20px;
+}
+main section .sidebar .card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+main section .sidebar .selected ol {
+  padding-left: 20px;
+}
+main section .sidebar .selected ol li {
+  font-size: 20px;
+  line-height: 40px;
+}
+main section .sidebar .budget {
+  color: rgb(194, 194, 194);
+}
+main section .sidebar .budget button {
+  padding: 20px 10px;
+  display: block;
+  width: 100%;
+  margin-block: 20px;
+  font-size: 20px;
+  background-color: rgb(0, 72, 207);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+main section .sidebar .budget .two-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+main section .sidebar .budget .two-col input {
+  padding: 15px 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+main section .sidebar .budget .expanse-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main section .sidebar .budget .expanse p,
+main section .sidebar .budget .total p {
+  display: flex;
+  justify-content: space-between;
+}
+main section .sidebar .budget .expanse p span,
+main section .sidebar .budget .total p span {
+  color: white;
+}
+main section .sidebar .budget .total p span {
+  color: rgb(255, 81, 110);
 }/*# sourceMappingURL=main.css.map */
