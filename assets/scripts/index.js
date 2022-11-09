@@ -1,7 +1,7 @@
 const players = [
   { name: "Messi", goals: 25, assists: 120, image: "messi.webp" },
   { name: "Ronaldo", goals: 25, assists: 120, image: "ronaldo.webp" },
-  { name: "Neyma", goals: 25, assists: 120, image: "neymar.jpeg" },
+  { name: "Neymar", goals: 25, assists: 120, image: "neymar.jpeg" },
   { name: "Pele", goals: 25, assists: 120, image: "pele.jpg" },
   { name: "Maradona", goals: 25, assists: 120, image: "maradona.webp" },
   { name: "Mbappe", goals: 25, assists: 120, image: "mbappe.jpg" },
@@ -11,6 +11,21 @@ const players = [
 const selectedPlayers = [];
 
 const playersContainer = document.querySelector(".players");
+const selectedList = document.querySelector(".selected ol");
+
+const hydrateSelected = () => {
+  let html = "";
+
+  selectedPlayers.forEach((player) => {
+    html += `<li>${player}</li>`;
+  });
+
+  selectedList.innerHTML = html;
+
+  if (html.length > 0) {
+    document.querySelector(".no-player").classList.add("hidden");
+  }
+};
 
 const hydratePlayers = () => {
   let html = "";
@@ -39,11 +54,16 @@ const hydratePlayers = () => {
 };
 
 const addPlayer = (element, player) => {
+  if (selectedPlayers.length >= 5) {
+    return alert("Can't select more than 5");
+  }
+
   if (selectedPlayers.includes(player)) {
     return alert("This player has already been selected");
   } else {
     selectedPlayers.push(player);
     element.classList.add("selected");
+    hydrateSelected();
   }
 };
 

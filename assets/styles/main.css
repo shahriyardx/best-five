@@ -21,6 +21,10 @@ body {
   background: #191919;
 }
 
+.hidden {
+  display: none;
+}
+
 /**
 * Header
 */
@@ -237,4 +241,9 @@ main section .sidebar .budget .total p span {
 }
 main section .sidebar .budget .total p span {
   color: rgb(255, 81, 110);
+}
+
+.no-player {
+  text-align: center;
+  color: red;
 }/*# sourceMappingURL=main.css.map */
