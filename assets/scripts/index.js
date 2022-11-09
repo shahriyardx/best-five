@@ -8,6 +8,8 @@ const players = [
   { name: "Machado", goals: 25, assists: 120, image: "machado.jpeg" },
 ];
 
+const selectedPlayers = [];
+
 const playersContainer = document.querySelector(".players");
 
 const hydratePlayers = () => {
@@ -27,13 +29,22 @@ const hydratePlayers = () => {
             <span>${player.assists} Assist</span>
           </p>
 
-          <button>Select Player</button>
+          <button onclick="addPlayer(this, '${player.name}')">Select Player</button>
         </div>
       </div>
     `;
   });
 
   playersContainer.innerHTML = html;
+};
+
+const addPlayer = (element, player) => {
+  if (selectedPlayers.includes(player)) {
+    return alert("This player has already been selected");
+  } else {
+    selectedPlayers.push(player);
+    element.classList.add("selected");
+  }
 };
 
 window.onload = () => {

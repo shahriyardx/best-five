@@ -144,9 +144,13 @@ main section .players__player-info button {
   padding: 10px 20px;
   font-size: 18px;
   border: none;
-  background: #1b8cfd;
+  background: #0063c6;
   color: white;
   cursor: pointer;
+}
+main section .players__player-info button.selected {
+  background: #5daeff;
+  pointer-events: none;
 }
 main section .sidebar {
   width: 100%;

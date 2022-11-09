@@ -128,9 +128,14 @@ main section {
           padding: 10px 20px;
           font-size: 18px;
           border: none;
-          background: #1b8cfd;
+          background: #0063c6;
           color: white;
           cursor: pointer;
+
+          &.selected {
+            background: #5daeff;
+            pointer-events: none;
+          }
         }
       }
       background: black;
