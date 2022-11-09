@@ -16,14 +16,14 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
 
-  @include tablet {
+  @include sm {
     height: 500px;
     padding-block: 0;
     padding-inline: 30px;
     background-position: top right;
   }
 
-  @include desktop {
+  @include lg {
     background-image: var(--header-image);
     height: 600px;
   }
@@ -34,46 +34,105 @@ header {
 
   .content {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1800px;
     margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr;
 
-    @include laptop {
-      grid-template-columns: repeat(3, 1fr);
+    @include md {
+      grid-template-columns: 80% 20%;
     }
 
-    @include desktop {
-      grid-template-columns: repeat(2, 1fr);
+    @include lg {
+      grid-template-columns: 60% 40%;
     }
 
     .info {
       padding-inline: 20px;
 
-      @include laptop {
-        grid-column: span 2;
-      }
-
-      @include desktop {
-        grid-column: span 1 !important;
-      }
-
       h1 {
         font-size: 40px;
         margin-bottom: 10px;
 
-        @include tablet {
+        @include sm {
           font-size: 50px;
+        }
+
+        @include md {
+          font-size: 60px;
         }
       }
 
       p {
         font-size: 14px;
 
-        @include tablet {
-          font-size: 16px;
+        @include sm {
+          font-size: 18px;
         }
       }
+    }
+  }
+}
+
+/**
+* Player cards
+*/
+
+main section {
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: 20px;
+  padding-block: 100px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @include md {
+    grid-template-columns: 60% 40%;
+  }
+
+  .players {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__player {
+      img {
+        width: 100%;
+        aspect-ratio: 3/2;
+      }
+
+      &-info {
+        padding: 30px 0px;
+        text-align: center;
+
+        p {
+          margin-top: 5px;
+          margin-bottom: 20px;
+          font-size: 13px;
+          color: #aaaaaa;
+        }
+
+        button {
+          padding: 10px 20px;
+          font-size: 18px;
+          border: none;
+          background: #1b8cfd;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      background: black;
+      color: white;
     }
   }
 }
