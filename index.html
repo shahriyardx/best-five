@@ -29,7 +29,7 @@
         <div class="sidebar">
           <div class="cards-wrapper">
             <div class="card selected">
-              <h2>Selected - <span class="selected_count">5</span></h2>
+              <h2>Selected - <span class="selected_count">0</span></h2>
 
               <ol></ol>
 
@@ -41,30 +41,34 @@
 
               <div class="two-col">
                 <p>Per Player</p>
-                <input type="number" />
+                <input type="number" id="per_player" />
               </div>
 
-              <button class="calculate-button">Calculate</button>
+              <button class="calculate-button" onclick="calculatePerPlayer()">
+                Calculate
+              </button>
 
               <div class="expanse-fields">
                 <div class="expanse">
-                  <p>Player Expanses <span>$5000</span></p>
+                  <p>Player Expanses $<span class="player_expanse">0</span></p>
                 </div>
                 <div class="two-col">
                   <p>Manager</p>
-                  <input type="number" />
+                  <input type="number" id="manager" />
                 </div>
 
                 <div class="two-col">
                   <p>Coach</p>
-                  <input type="number" />
+                  <input type="number" id="coach" />
                 </div>
               </div>
 
-              <button class="calculate-button">Calculate Total</button>
+              <button class="calculate-button" onclick="caltulateTotal()">
+                Calculate Total
+              </button>
 
               <div class="total">
-                <p>Total <span class="total_number">$11000</span></p>
+                <p>Total $<span class="total_number">0</span></p>
               </div>
             </div>
           </div>
