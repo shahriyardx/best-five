@@ -54,9 +54,15 @@ header {
 }
 header .content {
   width: 100%;
-  max-width: 1800px;
+  max-width: 1700px;
   margin-inline: auto;
   text-align: center;
+  padding-inline: 20px;
+}
+@media (min-width: 992px) {
+  header .content {
+    text-align: left;
+  }
 }
 header .content .info h1 {
   font-size: 40px;

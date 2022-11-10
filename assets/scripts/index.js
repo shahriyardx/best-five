@@ -1,11 +1,13 @@
 const players = [
-  { name: "Messi", goals: 25, assists: 120, image: "messi.webp" },
-  { name: "Ronaldo", goals: 25, assists: 120, image: "ronaldo.webp" },
-  { name: "Neymar", goals: 25, assists: 120, image: "neymar.jpeg" },
-  { name: "Pele", goals: 25, assists: 120, image: "pele.jpg" },
-  { name: "Maradona", goals: 25, assists: 120, image: "maradona.webp" },
-  { name: "Mbappe", goals: 25, assists: 120, image: "mbappe.jpg" },
-  { name: "Machado", goals: 25, assists: 120, image: "machado.jpeg" },
+  { name: "Messi", goals: 100, assists: 120, image: "messi.webp" },
+  { name: "Ronaldo", goals: 23, assists: 50, image: "ronaldo.webp" },
+  { name: "Neymar", goals: 2, assists: 12, image: "neymar.jpeg" },
+  { name: "Pele", goals: 33, assists: 92, image: "pele.jpg" },
+  { name: "Maradona", goals: 12, assists: 67, image: "maradona.webp" },
+  { name: "Mbappe", goals: 13, assists: 56, image: "mbappe.jpg" },
+  { name: "Machado", goals: 54, assists: 44, image: "machado.jpeg" },
+  { name: "Lewandowski", goals: 23, assists: 90, image: "lewad.avif" },
+  { name: "Bruyne", goals: 12, assists: 80, image: "bruyne.jpg" },
 ];
 
 const expanses = {
@@ -17,20 +19,17 @@ const selectedPlayers = [];
 
 const playersContainer = document.querySelector(".players");
 const selectedList = document.querySelector(".selected ol");
+const selectedCount = document.querySelector(".selected_count");
+const noPlayer = document.querySelector(".no-player");
 
-const hydrateSelected = () => {
-  let html = "";
+const hydrateSelected = (player) => {
+  const li = document.createElement("li");
+  li.textContent = player;
+  selectedList.appendChild(li);
+  selectedCount.textContent = selectedPlayers.length;
 
-  selectedPlayers.forEach((player) => {
-    html += `<li>${player}</li>`;
-  });
-
-  selectedList.innerHTML = html;
-  document.querySelector(".selected_count").textContent =
-    selectedPlayers.length;
-
-  if (html.length > 0) {
-    document.querySelector(".no-player").classList.add("hidden");
+  if (selectedPlayers.length > 0) {
+    noPlayer.classList.add("hidden");
   }
 };
 
@@ -70,7 +69,7 @@ const addPlayer = (element, player) => {
   } else {
     selectedPlayers.push(player);
     element.classList.add("selected");
-    hydrateSelected();
+    hydrateSelected(player);
   }
 };
 

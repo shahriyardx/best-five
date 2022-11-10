@@ -33,9 +33,14 @@ header {
 
   .content {
     width: 100%;
-    max-width: 1800px;
+    max-width: 1700px;
     margin-inline: auto;
     text-align: center;
+    padding-inline: 20px;
+
+    @include lg {
+      text-align: left;
+    }
 
     .info {
       h1 {
