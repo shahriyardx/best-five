@@ -243,6 +243,29 @@ main section {
   }
 }
 
+footer {
+  border-top: 1px solid rgb(70, 70, 70);
+
+  section {
+    color: #e8e8e8;
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    padding-block: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div p {
+      font-weight: bold;
+      span {
+        font-weight: normal;
+        color: tomato;
+      }
+    }
+  }
+}
+
 .no-player {
   text-align: center;
   color: red;
